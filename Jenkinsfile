@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Buzz Buzz') {
       steps {
-        echo 'Bees Buzz!' >/tmp/test.txt
+        echo 'Bees Buzz!'
       }
     }
 
