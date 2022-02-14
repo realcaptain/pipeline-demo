@@ -11,8 +11,20 @@ pipeline {
     }
 
     stage('Buzz Test') {
-      steps {
-        sh './jenkins/test-all.sh'
+      parallel {
+        stage('Testing A') {
+          steps {
+            sh './jenkins/test-all.sh'
+          }
+        }
+
+        stage('Testing B') {
+          steps {
+            sh '''sleep 10
+echo done.'''
+          }
+        }
+
       }
     }
 
